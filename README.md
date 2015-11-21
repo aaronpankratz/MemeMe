@@ -1,2 +1,2 @@
 # MemeMe
-MemeMe iOS app for Udacity UIKit Fundamentals course
+MemeMe iOS app for Udacity UIKit Fundamentals
