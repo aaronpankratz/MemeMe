@@ -39,22 +39,40 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-Ur-m9Y">
+                                <rect key="frame" x="266" y="482" width="68.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Top" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CrK-AJ-SZ0">
+                                <rect key="frame" x="278" y="65" width="45.5" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VWX-uH-Xq6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5Pi-RH-xVG"/>
                             <constraint firstItem="6F7-6O-NCH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5dK-va-7ey"/>
+                            <constraint firstItem="CrK-AJ-SZ0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKf-YS-fsw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VWX-uH-Xq6" secondAttribute="trailing" constant="-20" id="Frx-xb-g1n"/>
                             <constraint firstItem="VWX-uH-Xq6" firstAttribute="top" secondItem="6F7-6O-NCH" secondAttribute="bottom" id="Szp-0c-GnF"/>
                             <constraint firstItem="6F7-6O-NCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TvM-EA-vKB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VWX-uH-Xq6" secondAttribute="bottom" id="UK5-Nk-Ip2"/>
+                            <constraint firstItem="CrK-AJ-SZ0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="bjl-4x-C4f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2TV-Ur-m9Y" secondAttribute="bottom" constant="88" id="fDR-hM-0mS"/>
+                            <constraint firstItem="2TV-Ur-m9Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fvT-PP-2SO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6F7-6O-NCH" secondAttribute="trailing" constant="-20" id="kUm-eG-ZJ5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="2TV-Ur-m9Y" id="Mdk-Lx-4QV"/>
                         <outlet property="cameraButtonItem" destination="V8r-6h-AMa" id="UIJ-d6-E1Y"/>
                         <outlet property="imagePickerView" destination="6F7-6O-NCH" id="dfs-Jm-zwW"/>
+                        <outlet property="topTextField" destination="CrK-AJ-SZ0" id="1aC-GB-MyW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

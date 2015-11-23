@@ -11,12 +11,22 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
-    
     @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    
+    let memeTextFieldDelegate = MemeTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        
+        topTextField.textAlignment = NSTextAlignment.Center
+        bottomTextField.textAlignment = NSTextAlignment.Center
+        
+        topTextField.delegate = self.memeTextFieldDelegate
+        bottomTextField.delegate = self.memeTextFieldDelegate
     }
 
     override func viewWillAppear(animated: Bool) {
