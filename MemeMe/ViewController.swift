@@ -12,25 +12,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
-    @IBOutlet weak var topTextField: UITextField!
-    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var topTextField: MemeTextField!
+    @IBOutlet weak var bottomTextField: MemeTextField!
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.blackColor(),
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : NSNumber(float: 3.0)
-        ]
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        
         topTextField.delegate = self.memeTextFieldDelegate
         bottomTextField.delegate = self.memeTextFieldDelegate
     }

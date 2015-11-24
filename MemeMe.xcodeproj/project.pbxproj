@@ -15,6 +15,7 @@
 		D5B896E31C0105F7004C4C2E /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B896E21C0105F7004C4C2E /* MemeMeTests.swift */; };
 		D5B896EE1C0105F7004C4C2E /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B896ED1C0105F7004C4C2E /* MemeMeUITests.swift */; };
 		D5F8086C1C035D1300E66C8D /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F8086B1C035D1300E66C8D /* MemeTextFieldDelegate.swift */; };
+		D5F8086E1C03F9E600E66C8D /* MemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F8086D1C03F9E600E66C8D /* MemeTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D5B896ED1C0105F7004C4C2E /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		D5B896EF1C0105F7004C4C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5F8086B1C035D1300E66C8D /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		D5F8086D1C03F9E600E66C8D /* MemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				D5B896CD1C0105F6004C4C2E /* AppDelegate.swift */,
 				D5B896CF1C0105F6004C4C2E /* ViewController.swift */,
+				D5F8086D1C03F9E600E66C8D /* MemeTextField.swift */,
 				D5F8086B1C035D1300E66C8D /* MemeTextFieldDelegate.swift */,
 				D5B896D11C0105F6004C4C2E /* Main.storyboard */,
 				D5B896D41C0105F6004C4C2E /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 				D5B896D01C0105F6004C4C2E /* ViewController.swift in Sources */,
 				D5F8086C1C035D1300E66C8D /* MemeTextFieldDelegate.swift in Sources */,
 				D5B896CE1C0105F6004C4C2E /* AppDelegate.swift in Sources */,
+				D5F8086E1C03F9E600E66C8D /* MemeTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
