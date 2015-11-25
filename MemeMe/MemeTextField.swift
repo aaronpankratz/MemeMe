@@ -21,6 +21,5 @@ class MemeTextField: UITextField {
         super.init(coder: aDecoder)
         self.defaultTextAttributes = MemeTextField.memeTextAttributes
         self.textAlignment = NSTextAlignment.Center
-        
     }
 }

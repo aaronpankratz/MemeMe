@@ -39,17 +39,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-Ur-m9Y" customClass="MemeTextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="272" y="497" width="55.5" height="15"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="TOP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CrK-AJ-SZ0" customClass="MemeTextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="281" y="40" width="37.5" height="21"/>
                                 <animations/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CrK-AJ-SZ0" customClass="MemeTextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="284" y="65" width="32" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="BOTTOM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TV-Ur-m9Y" customClass="MemeTextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="262" y="495" width="74.5" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
@@ -63,10 +62,10 @@
                             <constraint firstItem="VWX-uH-Xq6" firstAttribute="top" secondItem="6F7-6O-NCH" secondAttribute="bottom" id="Szp-0c-GnF"/>
                             <constraint firstItem="6F7-6O-NCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TvM-EA-vKB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VWX-uH-Xq6" secondAttribute="bottom" id="UK5-Nk-Ip2"/>
-                            <constraint firstItem="CrK-AJ-SZ0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="b0j-1P-KDB"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2TV-Ur-m9Y" secondAttribute="bottom" constant="88" id="fDR-hM-0mS"/>
                             <constraint firstItem="2TV-Ur-m9Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fvT-PP-2SO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6F7-6O-NCH" secondAttribute="trailing" constant="-20" id="kUm-eG-ZJ5"/>
+                            <constraint firstItem="CrK-AJ-SZ0" firstAttribute="top" secondItem="6F7-6O-NCH" secondAttribute="top" constant="40" id="sYu-br-n4x"/>
+                            <constraint firstItem="2TV-Ur-m9Y" firstAttribute="bottom" secondItem="6F7-6O-NCH" secondAttribute="bottom" constant="-40" id="vXZ-Gq-iFe"/>
                         </constraints>
                     </view>
                     <connections>

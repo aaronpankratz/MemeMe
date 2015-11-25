@@ -19,7 +19,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topTextField.attributedPlaceholder = NSAttributedString(string: "TOP", attributes: MemeTextField.memeTextAttributes)
         topTextField.delegate = self.memeTextFieldDelegate
+        bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM", attributes: MemeTextField.memeTextAttributes)
         bottomTextField.delegate = self.memeTextFieldDelegate
     }
 
