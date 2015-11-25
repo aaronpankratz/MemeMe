@@ -65,6 +65,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func share(sender: AnyObject) {
         let memedImage = generateMemedImage()
+        // TODO: add sms activity
         let avcontroller = UIActivityViewController(activityItems: [memedImage], applicationActivities:nil)
         avcontroller.completionWithItemsHandler = { activity, success, items, error in
             self.save(memedImage)
