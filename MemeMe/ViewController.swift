@@ -13,7 +13,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
     @IBOutlet weak var topTextField: MemeTextField!
-    @IBOutlet weak var bottomTextField: MemeTextField!
+    @IBOutlet var bottomTextField: MemeTextField!
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
@@ -74,11 +74,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if (self.bottomTextField.isFirstResponder()) {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += getKeyboardHeight(notification)
+        if (self.bottomTextField.isFirstResponder()) {
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
