@@ -18,7 +18,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    @IBOutlet weak var topToolbarVerticalLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topToolbarHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomToolbarHeightConstraint: NSLayoutConstraint!
+    
     let memeTextFieldDelegate = MemeTextFieldDelegate()
+    let ToolbarHeight = CGFloat(44)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +62,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func share(sender: AnyObject) {
-        
+        let memedImage = generateMemedImage()
+        let avcontroller = UIActivityViewController(activityItems: [memedImage], applicationActivities:nil)
+        self.presentViewController(avcontroller, animated: true, completion: nil)
     }
     
     // MARK: UIImagePickerControllerDelegate
@@ -108,7 +115,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage
     {
-        // TODO: Hide toolbar and navbar
+        hideToolbarAndNavbar()
 
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -118,9 +125,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar
+        showToolbarAndNavbar()
         
         return memedImage
+    }
+    
+    func hideToolbarAndNavbar() {
+        self.topToolbar.hidden = true
+        self.topToolbarHeightConstraint.constant = 0
+        self.topToolbarVerticalLayoutConstraint.constant = -20
+        self.bottomToolbar.hidden = true
+        self.bottomToolbarHeightConstraint.constant = 0
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    func showToolbarAndNavbar() {
+        self.topToolbarHeightConstraint.constant = ToolbarHeight
+        self.topToolbarVerticalLayoutConstraint.constant = 0
+        self.topToolbar.hidden = false
+        self.bottomToolbarHeightConstraint.constant = ToolbarHeight
+        self.bottomToolbar.hidden = false;
+        self.navigationController?.navigationBar.hidden = false
     }
 }
 
