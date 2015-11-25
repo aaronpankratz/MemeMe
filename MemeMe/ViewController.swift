@@ -9,11 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    @IBOutlet weak var topToolbar: UIToolbar!
+    @IBOutlet weak var shareButtonItem: UIBarButtonItem!
     @IBOutlet weak var imagePickerView: UIImageView!
-    @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
     @IBOutlet weak var topTextField: MemeTextField!
     @IBOutlet var bottomTextField: MemeTextField!
+    @IBOutlet weak var cameraButtonItem: UIBarButtonItem!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     
@@ -29,13 +32,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         cameraButtonItem.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
-        
+        self.shareButtonItem.enabled = self.imagePickerView.image != nil;
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
+    
+    // MARK: IBAction
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -51,6 +56,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func share(sender: AnyObject) {
+        
+    }
+    
+    // MARK: UIImagePickerControllerDelegate
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
@@ -62,6 +73,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // MARK: Keyboard notification
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -84,6 +97,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             view.frame.origin.y += getKeyboardHeight(notification)
         }
     }
+    
+    // MARK: helper methods
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
