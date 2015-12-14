@@ -1,5 +1,5 @@
 //
-//  MemeCollectionViewController.swift
+//  MemeDetailViewController.swift
 //  MemeMe
 //
 //  Created by Aaron Pankratz on 12/13/15.
@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController {
-    
+class MemeDetailViewController: UIViewController {
+    @IBOutlet weak var memeImageView: UIImageView!
 }

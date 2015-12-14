@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var shareButtonItem: UIBarButtonItem!
@@ -68,6 +68,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.save(memedImage)
         }
         self.presentViewController(avcontroller, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: UIImagePickerControllerDelegate
@@ -159,6 +163,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.memes.append(meme)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
