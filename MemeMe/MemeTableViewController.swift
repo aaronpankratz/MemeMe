@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 class MemeTableViewController: UITableViewController {
+    let tableViewDelegate = MemeTableViewDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tableViewDelegate = MemeTableViewDelegate()
         tableViewDelegate.delegate = self
-        self.tableView.delegate = tableViewDelegate
-        self.tableView.dataSource = tableViewDelegate
+        self.tableView.delegate = self.tableViewDelegate
+        self.tableView.dataSource = self.tableViewDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        self.tableView.reloadData()
+        self.tableView.reloadData()
     }
 }

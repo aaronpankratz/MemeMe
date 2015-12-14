@@ -110,7 +110,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="Z0I-13-3V8">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" id="3yf-cM-2Xs" customClass="MemeDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="3yf-cM-2Xs" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="edc-Wv-Be3"/>
                         <viewControllerLayoutGuide type="bottom" id="I6E-tF-Yy1"/>
@@ -273,6 +273,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mcS-jI-bzP"/>
+        <segue reference="d3y-0c-avv"/>
     </inferredMetricsTieBreakers>
 </document>
