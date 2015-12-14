@@ -25,8 +25,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeTextFieldDelegate = MemeTextFieldDelegate()
     let ToolbarHeight = CGFloat(44)
     
-    var savedMemes = [Meme]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         topTextField.attributedPlaceholder = NSAttributedString(string: "TOP", attributes: MemeTextField.memeTextAttributes)
@@ -158,7 +156,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             bottomText: self.bottomTextField.text!,
             image: self.imagePickerView.image!,
             memedImage: memedImage)
-        savedMemes.append(meme)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
 }
 
